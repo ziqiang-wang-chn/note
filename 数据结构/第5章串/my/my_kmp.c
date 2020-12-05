@@ -7,9 +7,9 @@
  *  2. 当两符号不同，前指针只能回退到大于0的位置，这时候比较，如果不同则数组此处值=0，并只后移后指针
  *                                                   如果相同则数组此处值=前指针的下标值+1，并后移两指针
  * 
- *@param source: 源串
- *@param prefix_arr: 串的前缀表 （next_arr）
- *@param size: 前缀表的大小；源串的长度
+ * @param source: 源串
+ * @param prefix_arr: 串的前缀表 （next_arr）
+ * @param size: 前缀表的大小；源串的长度
  **/
 void getPrefixArr(char* source, int* prefix_arr, int size) {
     int i = 0, j = 1;
@@ -48,8 +48,10 @@ void getPrefixArr(char* source, int* prefix_arr, int size) {
  *                                                    prefix_arr: 0 0 0 1 0                res->  位序：(i-j+1) 下标：(i-j)
  * 
  *                   若原醋暗中不存在目标串，则j是不可能大于目标串的长度的，因为j根本就没有遍历完一遍目标串，此时代表匹配失败，返回-1即可
- *              
  * 
+ * @param source： 源串
+ * @param pattern: 目标串（匹配串）
+ * @param prefix_arr: next_arr, 前缀表
  **/
 int kmp(char* source, char* pattern, int* prefix_arr) {
     int i = 0, j = 0;
